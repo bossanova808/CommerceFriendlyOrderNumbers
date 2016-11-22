@@ -19,7 +19,7 @@ class CommerceFriendlyOrderNumbersVariable
      */
     public function latestOrderNumber()
     {
-        return craft()->commercefriendlyordernumbers->getNextOrderNumber(false);
+        return craft()->commerceFriendlyOrderNumbers->getNextOrderNumber(false);
     }
  
 }

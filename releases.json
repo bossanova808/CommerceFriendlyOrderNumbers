@@ -1,4 +1,12 @@
 [
+        {
+        "version": "0.0.2",
+        "downloadUrl": "https://github.com/bossanova808/CommerceFriendlyOrderNumbers/archive/0.0.2.zip",
+        "date": "2016-11-22T05:41:01.158Z",
+        "notes": [
+            "[Fixed] Bug in latest order variable"
+        ]
+    },
     {
         "version": "0.0.1",
         "downloadUrl": "https://github.com/bossanova808/CommerceFriendlyOrderNumbers/archive/0.0.1.zip",
