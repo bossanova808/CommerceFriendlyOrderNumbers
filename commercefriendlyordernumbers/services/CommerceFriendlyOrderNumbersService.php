@@ -45,11 +45,18 @@ class CommerceFriendlyOrderNumbersService extends BaseApplicationComponent
 
         $order = $event->params['order'];  
         
-        //SET THE IS ORDER NUMBER
+        //SET THE FRIENDLY ORDER NUMBER
         $orderNumber = $this->getNextOrderNumber();
-        $order->setContentFromPost(array(
-            'friendlyOrderNumber' => $orderNumber,
-        ));
+        if(craft()->config->get('environmentVariables')['IsImageScience']){
+            $order->setContentFromPost(array(
+                'ISOrderNumber' => $orderNumber,
+            ));
+        }
+        else{
+            $order->setContentFromPost(array(
+                'friendlyOrderNumber' => $orderNumber,
+            ));
+        }
         craft()->commerce_orders->saveOrder($order);
 
     }
