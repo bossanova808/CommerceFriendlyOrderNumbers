@@ -47,7 +47,7 @@ class CommerceFriendlyOrderNumbersService extends BaseApplicationComponent
         
         //SET THE FRIENDLY ORDER NUMBER
         $orderNumber = $this->getNextOrderNumber();
-        if(craft()->config->get('environmentVariables')['IsImageScience']){
+        if(isset(craft()->config->get('environmentVariables')['IsImageScience'])){
             $order->setContentFromPost(array(
                 'ISOrderNumber' => $orderNumber,
             ));

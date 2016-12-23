@@ -65,7 +65,7 @@ class CommerceFriendlyOrderNumbersPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '0.0.2';
+        return '0.0.3';
     }
 
     /**
