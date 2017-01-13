@@ -62,7 +62,7 @@ To take it a step further you can replace Commerce order number on the order det
     if($("body").hasClass('commerceordersedit')){
         // Change the Page Title and Order Number at the top to the Friendly Order Number
         var $pagetitle = $('#page-title');
-        var FriendlyOrderNumber = $("#fields-FriendlyOrderNumber").val();
+        var FriendlyOrderNumber = $("#fields-friendlyOrderNumber").val();
         $pagetitle.html("<h1>Order #" + FriendlyOrderNumber + "</h1>");
         document.title = "Order #" + FriendlyOrderNumber;
     }
