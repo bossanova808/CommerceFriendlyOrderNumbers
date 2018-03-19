@@ -25,29 +25,29 @@ class CommerceFriendlyOrderNumbersService extends BaseApplicationComponent
     public function getNextOrderNumber($increment=true)
     {
         if($increment){
-            // check if we need to keep the number sequence
-            if (craft()->config->get('force_keep_sequence', 'commerceFriendlyOrderNumbers')) {
-                $current = craft()->db->createCommand()
-                    ->select('orderNumber')
-                    ->from('commercefriendlyordernumbers_ordernumber')
-                    ->where('id = 1')
-                    ->queryColumn();
-                $current = reset($current);
-                
-                $currentStored = craft()->db->createCommand()
-                    ->select('field_friendlyOrderNumber')
-                    ->from('content')
-                    ->where('field_friendlyOrderNumber=:field_friendlyOrderNumber', array(':field_friendlyOrderNumber' => $current))
-                    ->queryColumn();
-                $currentStored = reset($currentStored);
-                
-                // no entry found with current number; use same number without incrementing
-                if (empty($currentStored)) {
-                    return $current;
-                }
+
+            $current = craft()->db->createCommand()
+                ->select('orderNumber')
+                ->from('commercefriendlyordernumbers_ordernumber')
+                ->where('id = 1')
+                ->queryColumn();
+            $current = reset($current);
+            
+            $currentStored = craft()->db->createCommand()
+                ->select('field_friendlyOrderNumber')
+                ->from('content')
+                ->where('field_friendlyOrderNumber=:field_friendlyOrderNumber', array(':field_friendlyOrderNumber' => $current))
+                ->queryColumn();
+            $currentStored = reset($currentStored);
+            
+            // no entry found with current number; use same number without actually incrementing
+            if (empty($currentStored)) {
+                return $current;
             }
+
             craft()->db->createCommand()->setText('update craft_commercefriendlyordernumbers_ordernumber set orderNumber = orderNumber + 1 where id=1')->execute();
         }
+
         $result = craft()->db->createCommand()->setText('select orderNumber from craft_commercefriendlyordernumbers_ordernumber where id=1')->queryAll();
         $result = $result[0]['orderNumber'];
         return $result;
@@ -66,18 +66,10 @@ class CommerceFriendlyOrderNumbersService extends BaseApplicationComponent
 
         $order = $event->params['order'];  
         
-        //SET THE FRIENDLY ORDER NUMBER
         $orderNumber = $this->getNextOrderNumber();
-        if(isset(craft()->config->get('environmentVariables')['IsImageScience'])){
-            $order->setContentFromPost(array(
-                'ISOrderNumber' => $orderNumber,
-            ));
-        }
-        else{
-            $order->setContentFromPost(array(
-                'friendlyOrderNumber' => $orderNumber,
-            ));
-        }
+        $order->setContentFromPost(array(
+            'friendlyOrderNumber' => $orderNumber,
+        ));
         craft()->commerce_orders->saveOrder($order);
 
     }

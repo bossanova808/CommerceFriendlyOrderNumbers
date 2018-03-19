@@ -1,5 +1,13 @@
 [
     {
+        "version": "0.0.4",
+        "downloadUrl": "https://github.com/bossanova808/CommerceFriendlyOrderNumbers/archive/0.0.4.zip",
+        "date": "2018-03-19T05:41:01.158Z",
+        "notes": [
+            "[Fixed] Make sure order numbers are always consecutive - without skips (thanks Bolden)"
+        ]
+    },
+    {
         "version": "0.0.3",
         "downloadUrl": "https://github.com/bossanova808/CommerceFriendlyOrderNumbers/archive/0.0.3.zip",
         "date": "2016-12-25T05:41:01.158Z",

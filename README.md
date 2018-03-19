@@ -29,12 +29,6 @@ By default the plugin will start with order number #1.  If you want to change th
 
 ![alt text](screenshots/FriendlyOrderNumber-SetStartingNumber.png "Order Start Number")
 
-## Setting to force number sequence
-
-In certain scenarios you might want the number sequence to be kept without gaps. e.g. when order fails to get finalised
-In that case you can set the setting `force_keep_sequence` in the config file to true. 
-If set to true system will check if the friendly number is actually being used by an order before incrementing it.
-
 ## Using The Friendly Order Number In Templates & Emails
 
 Generally, you can just refer to your new order number like any other field:
