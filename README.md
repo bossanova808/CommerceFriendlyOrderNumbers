@@ -25,7 +25,7 @@ Then, to actually install this plugin, follow these steps:
 
 ## Setting The Starting Order Number
 
-By default the plugin will start with order number #1.  If you want to change this, simply change the value in the database to *one less than* whatever you'd like the order numbers to start from - so if you want to start from 25001, then set the value to 25000, like so:
+By default the plugin will start with order number #1.  If you want to change this, simply change the value in the database directly.  Like so:
 
 ![alt text](screenshots/FriendlyOrderNumber-SetStartingNumber.png "Order Start Number")
 
@@ -74,9 +74,7 @@ And wa la, nice order numbers pretty much everywhere (and note you still have th
 
 Commerce Friendly Order Numbers has been tested with Craft 2.6+ and Commerce 1.1+, and is in daily use on working, live stores.
 
-### 0.0.1 -- 2016.09.23
-
-* Initial release
+For the changelog, see [releases.json](https://github.com/bossanova808/CommerceFriendlyOrderNumbers/blob/master/releases.json)
 
 Brought to you by [Jeremy Daalder](https://github.com/bossanova808)
 
