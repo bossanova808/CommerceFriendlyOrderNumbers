@@ -1,3 +1,12 @@
+# THIS PLUGIN IS ARCHIVED
+
+**Given Craft Commerce 2 now natively supports friendly order numbers (and more) with the new order reference field and through sequences support, this plugin is no longer needed.**
+
+It remains here for anyone still using it with Commerce V1 but there will be no more support or updates.
+
+
+
+
 # Commerce Friendly Order Numbers plugin for Craft CMS
 
 Use nice, client friendly consecutive order numbers with Craft Commerce
